@@ -1,0 +1,25 @@
+/*
+ * NinjaAdBlocker – discreet visual veil.
+ * The element stays in the DOM with its original size and display value,
+ * so scripts that check offsetHeight / display / visibility still see it.
+ * The user, however, sees almost nothing and cannot click it.
+ */
+.ninja-veil {
+  filter: blur(18px) grayscale(100%) !important;
+  opacity: 0.03 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  transition: opacity 0.2s ease, filter 0.2s ease !important;
+}
+
+/* Make sure nothing inside a veiled element can be clicked or focused visually */
+.ninja-veil * {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* Media inside the ad: stop autoplay distraction without removing it */
+.ninja-veil video,
+.ninja-veil iframe {
+  visibility: visible !important; /* keep "visible" for anti-adblock checks */
+}

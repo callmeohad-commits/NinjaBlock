@@ -1,0 +1,7 @@
+{
+  "name": "ninja-ad-blocker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "test": "node tests/extension.test.js" },
+  "devDependencies": { "playwright": "^1.47.0" }
+}

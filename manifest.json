@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "NinjaAdBlocker",
+  "version": "1.0.0",
+  "description": "Heuristic scoring model that detects ads in the DOM and discreetly veils them instead of removing them.",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["style.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
